@@ -3,3 +3,5 @@
 ## NAPŘ.:
 - Input: 4, 4, 3, 5, 1, 2, 2, 1
 - Output: 2.75
+## Screenshot výstupu
+![Výstup programu v konzoli](screenshot.png)
