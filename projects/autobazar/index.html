@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autobazar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Autobazar</h1>
+    
+        <div class="card">
+            <h2>Přidat nové auto</h2>
+            <form id="addCarForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="znacka">Značka *</label>
+                        <input type="text" id="znacka" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model *</label>
+                        <input type="text" id="model" required>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="rok">Rok výroby *</label>
+                        <input type="number" id="rok" min="1980" max="2025" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cena">Cena (Kč) *</label>
+                        <input type="number" id="cena" min="1" required>
+                    </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="palivo">Palivo</label>
+                        <select id="palivo">
+                            <option value="">-- Vyberte --</option>
+                            <option value="benzín">Benzín</option>
+                            <option value="nafta">Nafta</option>
+                            <option value="elektro">Elektro</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="najezd">Nájezd (km)</label>
+                        <input type="number" id="najezd" min="0">
+                    </div>
+                </div>
+    
+                <button type="submit">Přidat auto</button>
+    
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+        </div>
+    
+        <div class="card">
+            <h2>Seznam aut</h2>
+    
+            <div class="filter-section">
+                <label for="filterPalivo">Filtrovat podle paliva:</label>
+                <select id="filterPalivo">
+                    <option value="">Všechna auta</option>
+                    <option value="benzín">Benzín</option>
+                    <option value="nafta">Nafta</option>
+                    <option value="elektro">Elektro</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+            </div>
+    
+            <div id="carList" class="car-list"></div>
+        </div>
+    
+        <div class="card summary">
+            <h2>Souhrn</h2>
+            <div class="summary-stats">
+                <div class="stat">
+                    <div class="stat-value" id="carCount">0</div>
+                    <div class="stat-label">Počet aut</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="avgPrice">0 Kč</div>
+                    <div class="stat-label">Průměrná cena</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
